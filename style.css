@@ -6,7 +6,8 @@
   position: relative;
 }
 
-.card > div {
+.front,
+.back {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -39,6 +40,12 @@
 
 .card.flipped .back {
   transform: rotateY(0deg);
+}
+
+button:hover {
+  background-color: #555;
+}
+
 }
 
 button:hover {
