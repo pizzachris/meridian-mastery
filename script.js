@@ -26,15 +26,17 @@ function updateCard() {
   `;
 }
 
+// Handle flipping
 flipBtn.addEventListener('click', () => {
   card.classList.toggle('flipped');
 });
 
+// Handle next
 nextBtn.addEventListener('click', () => {
-  card.classList.remove('flipped'); // Move this to top
+  card.classList.remove('flipped'); // Reset flip before showing next
   index = (index + 1) % maekChiKi.length;
   updateCard();
 });
 
+// Initial card
 updateCard();
-
