@@ -31,9 +31,9 @@ flipBtn.addEventListener('click', () => {
 });
 
 nextBtn.addEventListener('click', () => {
+  card.classList.remove('flipped'); // Move this to top
   index = (index + 1) % maekChiKi.length;
   updateCard();
-  card.classList.remove('flipped');
 });
 
 updateCard();
