@@ -5,13 +5,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meridian Mastery</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main>
-    <h1>🧠 Meridian Mastery</h1>
-    <p>Welcome to the flashcard-based meridian learning tool.</p>
-    <button onclick="alert('Flashcard flow coming soon!')">Start Flashcards</button>
-  </main>
+  <div class="container">
+    <h1>🥋 Meridian Mastery</h1>
+    <div class="flashcard" id="flashcard">
+      <div class="front" id="card-front">
+        <h2 id="point-name">Yuhl Gyuhl (LU7)</h2>
+        <p id="meridian">Lung Meridian</p>
+        <p id="english-name">Broken Sequence</p>
+      </div>
+      <div class="back" id="card-back">
+        <p><strong>Meaning:</strong> Broken Sequence</p>
+        <p><strong>Healing Use:</strong> Opens chest, clears throat, regulates water</p>
+        <p><strong>Martial Use:</strong> Disrupts breath, shocks Lung meridian, stuns limb</p>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="flip-btn">Flip</button>
+    </div>
+  </div>
+
+  <script>
+    const card = document.getElementById('flashcard');
+    const flipBtn = document.getElementById('flip-btn');
+    let isFlipped = false;
+
+    flipBtn.addEventListener('click', () => {
+      isFlipped = !isFlipped;
+      card.classList.toggle('flipped', isFlipped);
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f8f8;
+      text-align: center;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .flashcard {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+      position: relative;
+      height: 200px;
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      backface-visibility: hidden;
+      top: 0;
+      left: 0;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .controls {
+      margin-top: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background: #222;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
 </body>
 </html>
