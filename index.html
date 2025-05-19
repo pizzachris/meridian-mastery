@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meridian Mastery</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="app">
-      <h1>🧠 Meridian Mastery</h1>
-      <div class="card" id="card">
-        <div class="front" id="front"></div>
-        <div class="back" id="back"></div>
-      </div>
-      <button id="flipBtn">Flip</button>
-      <button id="nextBtn">Next</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian Mastery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🧠 Meridian Mastery</h1>
+
+  <div class="card" id="card">
+    <div class="card-inner" id="cardInner">
+      <div class="front" id="front"></div>
+      <div class="back" id="back"></div>
     </div>
-    <script type="module" src="script.js"></script>
-  </body>
+  </div>
+
+  <div class="buttons">
+    <button id="flipBtn">Flip</button>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
 </html>
+
