@@ -11,27 +11,30 @@ const card = document.getElementById('card');
 function updateCard() {
   const point = maekChiKi[index];
 
- front.innerHTML = `
-  <div>
-    <strong>${point.romanized}</strong> (${point.meridian})<br/>
-    <em>${point.english}</em><br/>
-    <span style="font-size: 24px;">${point.korean}</span>
-  </div>
-`;
+  front.innerHTML = `
+    <div>
+      <span style="font-size: 24px; font-weight: bold;">${point.romanized}</span>
+      <br/>
+      <span style="font-size: 16px; color: #666;">${point.meridian}</span>
+      <br/>
+      <em style="font-size: 18px; margin-top: 10px;">${point.english}</em>
+      <br/>
+      <span style="font-size: 28px; color: #c00; margin-top: 10px;">${point.korean}</span>
+    </div>
+  `;
 
   back.innerHTML = `
-    <strong>Meaning:</strong> ${point.english}<br/>
-    <strong>Healing Use:</strong> ${point.healingUse}<br/>
-    <strong>Martial Use:</strong> ${point.martialUse}
+    <div>
+      <strong>Meaning:</strong><br/> ${point.english}<br/><br/>
+      <strong>Healing Use:</strong><br/> ${point.healingUse}<br/><br/>
+      <strong>Martial Use:</strong><br/> ${point.martialUse}
+    </div>
   `;
 }
 
-const cardInner = document.querySelector('.card-inner');
-
 flipBtn.addEventListener('click', () => {
-  cardInner.classList.toggle('flipped');
+  card.classList.toggle('flipped');
 });
-
 
 nextBtn.addEventListener('click', () => {
   index = (index + 1) % maekChiKi.length;
@@ -40,3 +43,4 @@ nextBtn.addEventListener('click', () => {
 });
 
 updateCard();
+
