@@ -1,98 +1,124 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meridian Mastery</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>🥋 Meridian Mastery</h1>
-    <div class="flashcard" id="flashcard">
-      <div class="front" id="card-front">
-        <h2 id="point-name">Yuhl Gyuhl (LU7)</h2>
-        <p id="meridian">Lung Meridian</p>
-        <p id="english-name">Broken Sequence</p>
-      </div>
-      <div class="back" id="card-back">
-        <p><strong>Meaning:</strong> Broken Sequence</p>
-        <p><strong>Healing Use:</strong> Opens chest, clears throat, regulates water</p>
-        <p><strong>Martial Use:</strong> Disrupts breath, shocks Lung meridian, stuns limb</p>
-      </div>
-    </div>
-    <div class="controls">
-      <button id="flip-btn">Flip</button>
-    </div>
-  </div>
+export const maekChiKi = [
+  {
+    korean: "율결",
+    romanized: "Yuhl Gyuhl",
+    meridian: "LU7",
+    english: "Broken Sequence",
+    healingUse: "Opens chest, clears throat, regulates water",
+    martialUse: "Disrupts breath, shocks Lung meridian, stuns limb"
+  },
+  {
+    korean: "소삼리혈",
+    romanized: "So Sahm Ri Hyul",
+    meridian: "LI20",
+    english: "Welcome Fragrance",
+    healingUse: "Opens nasal passages, clears sinus pressure",
+    martialUse: "Stuns face, disrupts breathing momentarily"
+  },
+  {
+    korean: "천부혈",
+    romanized: "Chuhn Boo Hyul",
+    meridian: "LU3",
+    english: "Palace of Heaven",
+    healingUse: "Clears sadness and grief, soothes lungs",
+    martialUse: "Drops guard, shocks chest"
+  },
+  {
+    korean: "극천",
+    romanized: "Geuk Chuhn",
+    meridian: "HT1",
+    english: "Utmost Spring",
+    healingUse: "Activates heart qi and circulation",
+    martialUse: "Causes sharp shoulder pain, numbs arm"
+  },
+  {
+    korean: "혼수",
+    romanized: "Hohn Soo",
+    meridian: "Artery Strike",
+    english: "Unconsciousness Point",
+    healingUse: "(Not used therapeutically)",
+    martialUse: "Knockout by blood flow disruption"
+  },
+  {
+    korean: "객주인",
+    romanized: "Gaek Joo In",
+    meridian: "GB3",
+    english: "Guest House",
+    healingUse: "Soothes ear, jaw and headache tension",
+    martialUse: "Stuns jaw and disrupts equilibrium"
+  },
+  {
+    korean: "혼수",
+    romanized: "Hohn Soo (opposite)",
+    meridian: "Artery Strike",
+    english: "Unconsciousness Point (opposite)",
+    healingUse: "(Not used therapeutically)",
+    martialUse: "Opposite side knockout point"
+  },
+  {
+    korean: "대포",
+    romanized: "Dae Po",
+    meridian: "SP21",
+    english: "Great Embrace",
+    healingUse: "Regulates qi in limbs and chest",
+    martialUse: "Knocks wind out, disables arm movement"
+  },
+  {
+    korean: "음교",
+    romanized: "Um Kyo",
+    meridian: "CV7",
+    english: "Yin Intersection",
+    healingUse: "Regulates uterus and reproductive qi",
+    martialUse: "Drops guard, weakens lower body"
+  },
+  {
+    korean: "구미",
+    romanized: "Goo Mi",
+    meridian: "CV15",
+    english: "Turtledove Tail",
+    healingUse: "Calms spirit, stabilizes emotions",
+    martialUse: "Drops upper body defense, weakens chest"
+  },
+  {
+    korean: "염천",
+    romanized: "Yuhm Chuhn",
+    meridian: "CV23",
+    english: "Spirit Spring",
+    healingUse: "Clears throat, benefits tongue",
+    martialUse: "Stuns speech and vocal system"
+  },
+  {
+    korean: "장문",
+    romanized: "Jahng Moon",
+    meridian: "LV13",
+    english: "Completion Gate",
+    healingUse: "Regulates spleen and liver",
+    martialUse: "Stuns core, weakens lower ribs"
+  },
+  {
+    korean: "아문",
+    romanized: "Ah Moon",
+    meridian: "GV15",
+    english: "Mute Gate",
+    healingUse: "Improves speech and mental clarity",
+    martialUse: "Shocks brainstem, stuns body"
+  },
+  {
+    korean: "신정",
+    romanized: "Shin Juhng",
+    meridian: "GV24",
+    english: "Spirit Courtyard",
+    healingUse: "Calms mind, clears head",
+    martialUse: "Disorients vision, dulls thinking"
+  },
+  {
+    korean: "유근",
+    romanized: "Yoo Geun",
+    meridian: "ST18",
+    english: "Root of the Breast",
+    healingUse: "Benefits breast and chest qi",
+    martialUse: "Knocks wind out, causes pain in ribs"
+  }
+];
 
-  <script>
-    const card = document.getElementById('flashcard');
-    const flipBtn = document.getElementById('flip-btn');
-    let isFlipped = false;
-
-    flipBtn.addEventListener('click', () => {
-      isFlipped = !isFlipped;
-      card.classList.toggle('flipped', isFlipped);
-    });
-  </script>
-
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f8f8f8;
-      text-align: center;
-      margin: 0;
-      padding: 2rem;
-    }
-
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    .flashcard {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transform-style: preserve-3d;
-      transition: transform 0.6s;
-      position: relative;
-      height: 200px;
-    }
-
-    .flashcard.flipped {
-      transform: rotateY(180deg);
-    }
-
-    .front, .back {
-      position: absolute;
-      width: 100%;
-      backface-visibility: hidden;
-      top: 0;
-      left: 0;
-    }
-
-    .back {
-      transform: rotateY(180deg);
-    }
-
-    .controls {
-      margin-top: 1rem;
-    }
-
-    button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      background: #222;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
-</body>
-</html>
