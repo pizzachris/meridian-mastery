@@ -7,5 +7,5 @@ export const maekChiKi = [
     healingUse: "Opens chest, clears throat, regulates water",
     martialUse: "Disrupts breath, shocks Lung meridian, stuns limb"
   },
-  // ... other 14 points
+ ]; // <- close the array cleanly
 ];
