@@ -26,9 +26,12 @@ function updateCard() {
   `;
 }
 
+const cardInner = document.querySelector('.card-inner');
+
 flipBtn.addEventListener('click', () => {
-  card.classList.toggle('flipped');
+  cardInner.classList.toggle('flipped');
 });
+
 
 nextBtn.addEventListener('click', () => {
   index = (index + 1) % maekChiKi.length;
