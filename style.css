@@ -20,8 +20,11 @@ h1 {
   perspective: 1000px;
   margin: auto;
   position: relative;
+.card > div {
+  ...
   transform-style: preserve-3d;
 }
+
 
 .card > div {
   width: 100%;
