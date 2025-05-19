@@ -11,11 +11,13 @@ const card = document.getElementById('card');
 function updateCard() {
   const point = maekChiKi[index];
 
-  front.innerHTML = `
-    <strong>${point.romanized} (${point.meridian})</strong><br/>
-    ${point.english}<br/>
-    <em>${point.korean}</em>
-  `;
+ front.innerHTML = `
+  <div>
+    <strong>${point.romanized}</strong> (${point.meridian})<br/>
+    <em>${point.english}</em><br/>
+    <span style="font-size: 24px;">${point.korean}</span>
+  </div>
+`;
 
   back.innerHTML = `
     <strong>Meaning:</strong> ${point.english}<br/>
