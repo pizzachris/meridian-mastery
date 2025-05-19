@@ -1,13 +1,31 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
 .card {
   width: 300px;
   height: 200px;
   perspective: 1000px;
   margin: auto;
   position: relative;
+  transform-style: preserve-3d; /* Required for 3D flip to work */
 }
 
-.front,
-.back {
+.card > div {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -42,10 +60,17 @@
   transform: rotateY(0deg);
 }
 
-button:hover {
-  background-color: #555;
-}
-
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
